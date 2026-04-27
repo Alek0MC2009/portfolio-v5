@@ -1,0 +1,55 @@
+---
+import { Formaciones } from "../../data/Formation";
+import EstudiosCard from "../common/EstudiosCard.astro";
+---
+
+<div id="formation" class="formation">
+  <h1>Formación</h1>
+  <h3>¿Qué sé hacer?</h3>
+
+  <div>
+    <p>
+      Yo sé multiples lenguajes, aun que la mayoria estan relacionados a las
+      ramas de frontend y backend, por ejemplo Python, Javascript y C# estan
+      relacionados a backend aun que Javascript tambíen tiene relacion con el
+      frontend. También se Typescript usado en ambos ambitos, Jsx y Tsx (son lo
+      mismo pero uno con tipos), sé HTML y CSS, y actualmente estoy aprendiendo
+      a usar astro, que es con lo que se esta haciendo esta pagina.
+    </p>
+    <h3>¿Por qué uso astro para hacer esta pagina?</h3>
+    <p>
+      Uso astro para hacer esta pagina por que es un framework muy sencillo, el
+      cual me permite meter Javascript o typescript para crear elementos
+      estaticos. Cosa que simplifica mucho el desarrollo de paginas webs
+      estaticas como este portfolio. Tambien por que es un framework donde
+      puedes importar componentes de react muy facilmente, por ejemplo los
+      iconos de lucide que uso, son los de react por que son los unicos que no
+      me dan errores al importarlos. Además que astro es un framework cada vez
+      mas usado en el mundo del frontend por su alta compatibilidad con la
+      mayoria de frameworks y librerias de frontend (React, Vue, Svelte, etc...)
+      Y por ultimo uso astro por que al generar Javascript mínimo, las paginas
+      cargan muy rapidamente
+    </p>
+    <h3>¿Aparte de astro que tecnologias he usado?</h3>
+    <p>
+      Aparte de astro para hacer esta pagina web he usado varias tecnologias,
+      como React para los iconos, node para crear el proyecto, css vanilla y
+      Typescript, para crear las listas del apartado sobre mi.
+    </p>
+  </div>
+
+  <div class="cards-grid">
+    {
+      Formaciones.map((formacion) => (
+        <EstudiosCard
+          titulo={formacion.titulo}
+          institucion={formacion.institucion}
+          fecha={formacion.fecha}
+          descripcion={formacion.descripcion}
+          tecnologias={formacion.tecnologias}
+          imagen={formacion.imagen}
+        />
+      ))
+    }
+  </div>
+</div>

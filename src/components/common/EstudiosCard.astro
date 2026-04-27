@@ -1,0 +1,97 @@
+---
+// src/components/FormationCard.astro
+
+export interface Props {
+  titulo: string;
+  institucion: string;
+  fecha: string;
+  descripcion: string;
+  tecnologias?: string[]; // Opcional
+  imagen?: string;
+}
+
+const { titulo, institucion, fecha, descripcion, tecnologias, imagen } =
+  Astro.props;
+---
+
+<div class="formation-card">
+  {imagen && <img src={imagen} alt={titulo} class="card-image" />}
+
+  <div class="card-content">
+    <h3>{titulo}</h3>
+    <p class="institucion">{institucion}</p>
+    <p class="fecha">{fecha}</p>
+    <p class="descripcion">{descripcion}</p>
+
+    {
+      tecnologias && tecnologias.length > 0 && (
+        <div class="tecnologias">
+          {tecnologias.map((tech) => (
+            <span class="tech-badge">{tech}</span>
+          ))}
+        </div>
+      )
+    }
+  </div>
+</div>
+
+<style>
+  .formation-card {
+    background: var(--background-alt);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px var(--shadow-color);
+    transition: transform 0.3s ease;
+  }
+
+  .formation-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .card-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+  }
+
+  .card-content {
+    padding: 1.5rem;
+  }
+
+  .formation-card h3 {
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+  }
+
+  .institucion {
+    color: var(--a-color);
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+  }
+
+  .fecha {
+    color: var(--text-light);
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+  }
+
+  .descripcion {
+    color: var(--text-color);
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+
+  .tecnologias {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .tech-badge {
+    background: var(--accent-3);
+    color: var(--text-color);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+  }
+</style>

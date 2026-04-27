@@ -1,23 +1,77 @@
+---
+import Header from "../components/common/Header.astro";
+---
+
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro Basics</title>
+  </head>
+  <body>
+    <Header />
+    <main>
+      <slot />
+    </main>
+  </body>
 </html>
 
 <style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+  :root {
+    /* Colores principales (texto, fondo, enlaces) */
+    --text-color: #2d3e40; /* Azul grisáceo profundo - legible y elegante */
+    --text-light: #5c7a7a; /* Para textos secundarios */
+    --background-color: #fef7e8; /* Crema cálido - fondo suave */
+    --background-alt: #fffaf0; /* Fondo alternativo ligeramente más claro */
+
+    /* Enlaces e interactivos */
+    --a-color: #ca774d; /* Terracota cálido */
+    --a-hover-color: #e09d6e; /* Terracota más claro */
+    --a-visited: #9b6a4e; /* Versión oscura para enlaces visitados */
+
+    /* Botones */
+    --button-color: #e2b181; /* Arena dorada */
+    --button-hover: #f0ca9c; /* Arena más clara */
+    --button-text: #2d3e40; /* Texto de botones */
+
+    /* Acentos y detalles */
+    --accent-1: #91a7a5; /* Verde azulado apagado */
+    --accent-2: #d9b48b; /* Beige tostado */
+    --accent-3: #b7c9b2; /* Salvia pálido */
+    --accent-4: #e6c28f; /* Trigo */
+
+    /* Bordes, sombras y separadores */
+    --border-color: #dac5ae; /* Beige suave para bordes */
+    --shadow-color: rgba(45, 62, 64, 0.08); /* Sombra sutil */
+
+    /* Estados (alerta, éxito, etc.) */
+    --success-color: #88a892;
+    --warning-color: #e2b181;
+    --info-color: #a6b8b6;
+  }
+
+  /* Reset global - CORREGIDO */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* Fondo para html y body */
+  html,
+  body {
+    background-color: var(--background-color);
+    overflow-x: hidden; /* Evita el desborde horizontal */
+  }
+
+  /* Opcional: para que el contenido tenga buen espaciado */
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
 </style>

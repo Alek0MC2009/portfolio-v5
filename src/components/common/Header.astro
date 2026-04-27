@@ -1,0 +1,79 @@
+---
+// Importaremos mas tarde
+import { Laptop, User, Book, Clipboard, Phone } from "lucide-react";
+---
+
+<header class="header">
+  <div class="title">
+    <h1>Alejandro Bravo Lingyte</h1>
+    <h2><Laptop />Desarrollador frontend</h2>
+  </div>
+
+  <nav class="links">
+    <a href="#about-me">
+      <User />
+      Sobre mí
+    </a>
+    <a href="#formation">
+      <Book />
+      Formación
+    </a>
+    <a href="#contact">
+      <Phone />
+      Contacto
+    </a>
+    <a href="#projects">
+      <Clipboard />
+      Proyectos
+    </a>
+  </nav>
+</header>
+
+<style>
+  .header {
+    width: 100%;
+    background-color: var(--accent-1); /* #91a7a5 - verde azulado apagado */
+    padding: 20px 40px;
+    gap: 20px;
+  }
+
+  .title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color); /* #2d3e40 - azul grisáceo profundo */
+    font-family:
+      "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  }
+
+  .title h2 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .links {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin: 5%;
+    padding: 0;
+  }
+
+  .links a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: var(--text-color); /* #c27e5c - terracota cálido */
+    font-size: 1.2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: color 0.3s ease;
+  }
+
+  .links a:hover {
+    color: var(--a-visited); /* #e09d6e - terracota más claro */
+    cursor: pointer;
+  }
+</style>
