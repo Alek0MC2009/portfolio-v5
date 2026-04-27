@@ -15,8 +15,6 @@ const { titulo, institucion, fecha, descripcion, tecnologias, imagen } =
 ---
 
 <div class="formation-card">
-  {imagen && <img src={imagen} alt={titulo} class="card-image" />}
-
   <div class="card-content">
     <h3>{titulo}</h3>
     <p class="institucion">{institucion}</p>
@@ -42,6 +40,7 @@ const { titulo, institucion, fecha, descripcion, tecnologias, imagen } =
     overflow: hidden;
     box-shadow: 0 4px 6px var(--shadow-color);
     transition: transform 0.3s ease;
+    font-family: Arial, Helvetica, sans-serif;
   }
 
   .formation-card:hover {

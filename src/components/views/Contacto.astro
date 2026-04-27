@@ -1,0 +1,74 @@
+---
+import { Mail } from "lucide-react";
+import { SiGithub, SiInstagram } from "@icons-pack/react-simple-icons";
+---
+
+<div id="contact" class="contact">
+  <h3>¿Cómo contactarme?</h3>
+
+  <div class="socials">
+    <a
+      href="mailto:alejandrobravolingyte@gmail.com"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <Mail size={20} />
+      Correo
+    </a>
+
+    <a
+      href="https://github.com/Alek0MC2009"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <SiGithub size={20} />
+      GitHub
+    </a>
+
+    <a
+      href="https://instagram.com/alxko.png__"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <SiInstagram size={20} />
+      Instagram
+    </a>
+  </div>
+</div>
+
+<style>
+  .contact {
+    text-align: center; /* ← Añade esto al contenedor padre */
+  }
+
+  .contact h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 1.5rem;
+  }
+
+  .socials {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .contact a {
+    color: var(--text-color);
+    text-decoration: none;
+    display: inline-flex; /* ← Clave para centrar */
+    align-items: center; /* ← Centra verticalmente */
+    gap: 8px; /* Espacio entre icono y texto */
+    padding: 8px 16px;
+    background: var(--background-alt);
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    font-family: arial;
+  }
+
+  .contact a:hover {
+    background: var(--accent-1);
+    color: white;
+    transform: translateY(-2px);
+  }
+</style>

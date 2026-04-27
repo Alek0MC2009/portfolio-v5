@@ -1,10 +1,11 @@
 ---
 import { Formaciones } from "../../data/Formation";
 import EstudiosCard from "../common/EstudiosCard.astro";
+import { WrenchIcon } from "lucide-react";
 ---
 
 <div id="formation" class="formation">
-  <h1>Formación</h1>
+  <h1><WrenchIcon />Formación</h1>
   <h3>¿Qué sé hacer?</h3>
 
   <div>
@@ -47,9 +48,24 @@ import EstudiosCard from "../common/EstudiosCard.astro";
           fecha={formacion.fecha}
           descripcion={formacion.descripcion}
           tecnologias={formacion.tecnologias}
-          imagen={formacion.imagen}
         />
       ))
     }
   </div>
 </div>
+
+<style>
+  .formation {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text-color);
+  }
+  h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    margin: 0%;
+    padding: 0%;
+    gap: 20px;
+  }
+</style>
